@@ -9,16 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var password: [(Int, UUID)] = []
+    @State private var password: [(Int, UUID)] = []
+    @State private var isActiveAlert: (Bool, AlertPasswordType) = (false, .unownError)
+    @State private var buttonFrames = [CGRect](repeating: .zero, count: 10)
     
-    @State var isActiveAlert: (Bool, AlertPasswordType) = (false, .unownError)
+    private let screenHeight = UIScreen.main.bounds.height
     
-    let screenHeight = UIScreen.main.bounds.height
-    let keychainKey = "passwordMailRu"
-    let keychainHelper = KeychainHelper()
+    private let keychainKey = "passwordMailRu"
+    private let keychainHelper = KeychainHelper()
     
-    var buttons: [String] = ["1","2","3","4","5","6","7","8","9","questionSymbol","0", "deleteSimbol"]
-    var columns = Array(repeating: GridItem(.flexible(), spacing: 30), count: 3)
+    private var buttons: [String] = ["1","2","3","4","5","6","7","8","9","questionSymbol","0", "deleteSimbol"]
+    private var columns = Array(repeating: GridItem(.flexible(), spacing: 30), count: 3)
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -53,10 +54,11 @@ struct ContentView: View {
                         }
                     }
                 }
+                .animation(.default.speed(2), value: password.count)
                 Spacer()
                 LazyVGrid(columns: columns) {
                     ForEach(buttons, id: \.self) { item in
-                        NumpadButton(buttonText: item) { type in
+                        NumpadButton(buttonText: item, buttonFrames: $buttonFrames) { type in
                             switch type {
                             case .number(let int):
                                 guard password.count < 4 else { password = []; return }
@@ -91,9 +93,14 @@ struct ContentView: View {
             }
             .alertView($isActiveAlert)
         }
+        
     }
     func sendPassword(_ handler: @escaping (Bool) -> Void) {
-        defer { password = [] }
+        defer {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                password = []
+            }
+        }
         guard let data = keychainHelper.read(service: keychainKey) else {
             let data = Data("\(password.map { $0.0 })".utf8)
             keychainHelper.save(data, service: keychainKey)

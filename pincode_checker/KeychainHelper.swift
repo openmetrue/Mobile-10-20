@@ -8,7 +8,6 @@
 import Foundation
 
 final class KeychainHelper {
-    
     func save(_ data: Data, service: String) {
         let query = [
             kSecValueData: data,

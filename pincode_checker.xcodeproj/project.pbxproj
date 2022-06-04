@@ -14,6 +14,7 @@
 		B4781A04284B245700C532F8 /* NumpadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4781A03284B245700C532F8 /* NumpadButton.swift */; };
 		B4781A0A284B83B400C532F8 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4781A09284B83B400C532F8 /* AlertView.swift */; };
 		B4781A0C284B8F0500C532F8 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4781A0B284B8F0500C532F8 /* KeychainHelper.swift */; };
+		B4781A0E284BB8EE00C532F8 /* CustomTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4781A0D284BB8EE00C532F8 /* CustomTapGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B4781A03284B245700C532F8 /* NumpadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadButton.swift; sourceTree = "<group>"; };
 		B4781A09284B83B400C532F8 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		B4781A0B284B8F0500C532F8 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		B4781A0D284BB8EE00C532F8 /* CustomTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				B4781A0B284B8F0500C532F8 /* KeychainHelper.swift */,
 				B4781A09284B83B400C532F8 /* AlertView.swift */,
 				B4781A03284B245700C532F8 /* NumpadButton.swift */,
+				B4781A0D284BB8EE00C532F8 /* CustomTapGesture.swift */,
 				B47819EE284B187900C532F8 /* Assets.xcassets */,
 				B47819F0284B187900C532F8 /* Preview Content */,
 			);
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4781A0E284BB8EE00C532F8 /* CustomTapGesture.swift in Sources */,
 				B47819ED284B187700C532F8 /* ContentView.swift in Sources */,
 				B4781A0A284B83B400C532F8 /* AlertView.swift in Sources */,
 				B4781A0C284B8F0500C532F8 /* KeychainHelper.swift in Sources */,
