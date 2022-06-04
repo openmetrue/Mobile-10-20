@@ -25,7 +25,7 @@ struct ContentView: View {
         ZStack(alignment: .bottom) {
             RadialGradient(colors: [Color("BackgroundRadialGradient1"),
                                     Color("Background"),
-                                    Color("BackgroundRadialGradient2")], center: .bottomLeading, startRadius: 0, endRadius: screenHeight)
+                                    Color("BackgroundRadialGradient2")], center: .bottomLeading, startRadius: 0, endRadius: screenHeight*1.2)
             .edgesIgnoringSafeArea(.all)
             VStack(spacing: 0) {
                 Spacer()
