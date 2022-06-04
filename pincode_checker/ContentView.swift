@@ -18,7 +18,7 @@ struct ContentView: View {
     private let keychainKey = "passwordMailRu"
     private let keychainHelper = KeychainHelper()
     
-    private var buttons: [String] = ["1","2","3","4","5","6","7","8","9","questionSymbol","0", "deleteSimbol"]
+    private var buttons: [String] = ["1","2","3","4","5","6","7","8","9","questionSymbol","0", "DeleteSimbol"]
     private var columns = Array(repeating: GridItem(.flexible(), spacing: 30), count: 3)
     
     var body: some View {

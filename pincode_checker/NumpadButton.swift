@@ -58,7 +58,7 @@ struct NumpadButton: View {
             Button {
                 if buttonText == "questionSymbol" {
                     actionHandler(.question)
-                } else if buttonText == "deleteSimbol" {
+                } else if buttonText == "DeleteSimbol" {
                     actionHandler(.delete)
                 } else {
                     actionHandler(.unknown)
